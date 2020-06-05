@@ -1,72 +1,40 @@
-public class dongwupai {
-    private String paimian;
-    private int shuliang;
-    private String leixing;
+package everdell;
+
+public class dongwupai extends kapai{
     private int jiangguoshu;
-    private boolean isweiyi;
-    private int fenshu;
-    private String duiyinjianzhu;
-    private String xiaoguo;
-
-    public dongwupai() {
-
+    private jianzhupai duiyinjianzhu;
+    public void xiaoguo(){
+        System.out.println("动物牌效果");
     }
 
     public dongwupai(String paimian) {
-        this.paimian = paimian;
-        this.shuliang = 1;
-        this.leixing = "";
+        super.setPaimian(paimian);
+        super.setShuliang(1);
+        super.setLeixing("");
+        super.setWeiyi(false);
+        super.setFenshu(0);
+        super.setXiaoguoyulan("");
         this.jiangguoshu = 0;
-        this.isweiyi = false;
-        this.fenshu = 0;
-        this.duiyinjianzhu = "";
-        this.xiaoguo = "";
     }
 
     public dongwupai(String paimian, int shuliang) {
-        this.paimian = paimian;
-        this.shuliang = shuliang;
-        this.leixing = "";
+        super.setPaimian(paimian);
+        super.setShuliang(shuliang);
+        super.setLeixing("");
+        super.setWeiyi(false);
+        super.setFenshu(0);
+        super.setXiaoguoyulan("");
         this.jiangguoshu = 0;
-        this.isweiyi = false;
-        this.fenshu = 0;
-        this.duiyinjianzhu = "";
-        this.xiaoguo = "";
     }
 
-    public dongwupai(String paimian, int shuliang, String leixing, int jiangguoshu, boolean isweiyi, int fenshu, String duiyinjianzhu, String xiaoguo) {
-        this.paimian = paimian;
-        this.shuliang = shuliang;
-        this.leixing = leixing;
+    public dongwupai(String paimian, int shuliang, String leixing, int jiangguoshu, boolean weiyi, int fenshu, String xiaoguoyulan) {
+        super.setPaimian(paimian);
+        super.setShuliang(shuliang);
+        super.setLeixing(leixing);
+        super.setWeiyi(weiyi);
+        super.setFenshu(fenshu);
+        super.setXiaoguoyulan(xiaoguoyulan);
         this.jiangguoshu = jiangguoshu;
-        this.isweiyi = isweiyi;
-        this.fenshu = fenshu;
-        this.duiyinjianzhu = duiyinjianzhu;
-        this.xiaoguo = xiaoguo;
-    }
-
-    public String getPaimian() {
-        return paimian;
-    }
-
-    public void setPaimian(String paimian) {
-        this.paimian = paimian;
-    }
-
-    public int getShuliang() {
-        return shuliang;
-    }
-
-    public void setShuliang(int shuliang) {
-        this.shuliang = shuliang;
-    }
-
-    public String getLeixing() {
-        return leixing;
-    }
-
-    public void setLeixing(String leixing) {
-        this.leixing = leixing;
     }
 
     public int getJiangguoshu() {
@@ -77,35 +45,16 @@ public class dongwupai {
         this.jiangguoshu = jiangguoshu;
     }
 
-    public boolean isIsweiyi() {
-        return isweiyi;
-    }
-
-    public void setIsweiyi(boolean isweiyi) {
-        this.isweiyi = isweiyi;
-    }
-
-    public int getFenshu() {
-        return fenshu;
-    }
-
-    public void setFenshu(int fenshu) {
-        this.fenshu = fenshu;
-    }
-
-    public String getDuiyinjianzhu() {
+    public jianzhupai getDuiyinjianzhu() {
         return duiyinjianzhu;
     }
 
-    public void setDuiyinjianzhu(String duiyinjianzhu) {
+    public void setDuiyinjianzhu(jianzhupai duiyinjianzhu) {
         this.duiyinjianzhu = duiyinjianzhu;
     }
 
-    public String getXiaoguo() {
-        return xiaoguo;
-    }
-
-    public void setXiaoguo(String xiaoguo) {
-        this.xiaoguo = xiaoguo;
+    public void linkKapai(jianzhupai pai) {
+        this.setDuiyinjianzhu(pai);
+        pai.setDuiyindongwu(this);
     }
 }
